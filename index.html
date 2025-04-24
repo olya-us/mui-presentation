@@ -3,21 +3,209 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-
-		<title>reveal.js</title>
-
+		<title>Material UI</title>
 		<link rel="stylesheet" href="dist/reset.css">
 		<link rel="stylesheet" href="dist/reveal.css">
 		<link rel="stylesheet" href="dist/theme/black.css">
-
-		<!-- Theme used for syntax highlighted code -->
 		<link rel="stylesheet" href="plugin/highlight/monokai.css">
 	</head>
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
+
+				<section>
+					<h1>Material UI</h1>
+					<p>A Modern React UI Framework</p>
+				</section>
+				
+				<section>
+					<section>
+						<h2>Introduction to Material UI</h2>
+						<p>Material UI (MUI) is a popular React-based UI framework that implements Google's Material Design system.</p>
+					</section>
+					<section>
+						<h3>Why Use Material UI?</h3>
+						<ul>
+							<li class="fragment fade-in">Enhances UI consistency</li>
+                        	<li class="fragment fade-in">Speeds up development</li>
+                        	<li class="fragment fade-in">Provides a professional look and feel</li>
+						</ul>
+					</section>
+				</section>
+			
+				<section>
+					<h2>Installation</h2>
+					<p>To start using Material UI in your React project, install it with npm:</p>
+					<pre><code>npm install @mui/material @emotion/react @emotion/styled</code></pre>
+					<p>or with yarn:</p>
+					<pre><code>yarn add @mui/material @emotion/react @emotion/styled</code></pre>
+				</section>
+			
+				<section>
+					<section>
+						<h2>Example Components</h2>
+						<p>Material UI offers a rich set of components that help you build beautiful, consistent user interfaces:</p>
+						<h3>Input</h3>
+						<img src="./assets/component1.png" alt="Material UI Components" style="width: 80%;">
+					</section>
+					<section>
+						<h3>Navigation</h3>
+						<img src="./assets/component2.png" alt="Material UI Components" style="width: 80%;">
+					</section>
+					<section>
+						<h3>Layout</h3>
+						<img src="./assets/component3.png" alt="Material UI Components" style="width: 80%;">
+					</section>
+					<section>
+						<h3>Feedback</h3>
+						<img src="./assets/component4.png" alt="Material UI Components" style="width: 80%;">
+					</section>
+					<section>
+						<h3>Data dasplay</h3>
+						<img src="./assets/component5.png" alt="Material UI Components" style="width: 80%;">
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Forms & Inputs</h2>
+						<p>Material UI provides powerful form elements like TextField, Checkbox, Radio, and Select.</p>
+						<pre><code data-trim data-noescape>
+							import TextField from '@mui/material/TextField';
+							
+							function FormExample() {
+								return (
+									&lt;form&gt;
+										&lt;TextField label="Standart" variant="standard"/&gt;
+										&lt;TextField label="Filled" variant="filled" /&gt;
+										&lt;TextField label="Outlined" variant="outlined" /&gt;
+									&lt;/form&gt;
+								);
+							}
+						</code></pre>
+					</section>
+				</section>
+			
+				<section>
+					<section>
+						<h2>Buttons in Material UI</h2>
+						<p>Buttons are one of the most common components in any app. MUI provides several button types:</p>
+						<ul>
+							<li><strong>Text Button:</strong> No background or border</li>
+							<li><strong>Contained Button:</strong> Filled background button</li>
+							<li><strong>Outlined Button:</strong> Transparent button with an outline</li>
+						</ul>
+					</section>
+					<section>
+						<pre><code data-trim data-line-numbers="6|7|8">
+							import Button from '@mui/material/Button';
+
+							function MyApp() {
+								return (
+									&lt;div&gt;
+										&lt;Button variant="text"&gt;Text&lt;/Button&gt;
+										&lt;Button variant="contained"&gt;Contained&lt;/Button&gt;
+										&lt;Button variant="outlined"&gt;Outlined&lt;/Button&gt;
+									&lt;/div&gt;
+								);
+							}
+						</code></pre>
+					</section>
+					<section>
+						<h3>Result</h3>
+						<img src="./assets/buttons.png" alt="Material UI Buttons" style="width: 70%;">
+					</section>
+				</section>
+			
+				<section>
+					<section>
+						<h2>Layout System</h2>
+						<p>Material UI’s Grid components help you create responsive and flexible layouts:</p>
+						<pre><code data-trim>
+							&lt;Grid container spacing={2}&gt;
+								&lt;Grid size={8}&gt;
+									&lt;Item&gt;size=8&lt;/Item&gt;
+								&lt;/Grid&gt;
+								&lt;Grid size={4}&gt;
+									&lt;Item&gt;size=4&lt;/Item&gt;
+								&lt;/Grid&gt;
+								&lt;Grid size={4}&gt;
+									&lt;Item&gt;size=4&lt;/Item&gt;
+								&lt;/Grid&gt;
+								&lt;Grid size={8}&gt;
+									&lt;Item&gt;size=8&lt;/Item&gt;
+								&lt;/Grid&gt;
+							&lt;/Grid&gt;
+						</code></pre>
+					</section>
+					<section>
+						<h3>Result</h3>
+						<img src="./assets/grid.png" alt="Material UI Grid" style="width: 80%;">
+					</section>
+				</section>
+			
+				<section>
+					<h2>Theming and Customization</h2>
+					<p>Material UI allows you to customize the theme globally to match your branding:</p>
+					<pre><code data-trim>
+						import { createTheme, ThemeProvider } from '@mui/material/styles';
+						
+						const theme = createTheme({
+							palette: {
+								primary: {
+									main: '#1976d2',
+								},
+								secondary: {
+									main: '#dc004e',
+								},
+							},
+						});
+								
+						function MyApp() {
+							return (
+								&lt;ThemeProvider theme={theme}&gt;
+									&lt;App /&gt;
+								&lt;/ThemeProvider&gt;
+							);
+						}
+					</code></pre>
+				</section>
+			
+				<section>
+					<h2>Performance and Optimization</h2>
+					<p>Material UI is optimized for performance, but you can further optimize your app by:</p>
+					<ul>
+						<li>Importing components only when needed (e.g., using `import { Button } from '@mui/material'` instead of importing the entire library)</li>
+						<li>Using the `sx` prop for inline styling</li>
+						<li>Reducing unnecessary re-renders by using React's `memo` or `useMemo`</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Accessibility</h2>
+					<p>Material UI components are designed with accessibility in mind:</p>
+					<ul>
+						<li>Built-in keyboard and screen reader support</li>
+						<li>Proper use of ARIA attributes</li>
+						<li>Responsive design</li>
+					</ul>
+				</section>
+			
+				<section>
+					<h2>Conclusion</h2>
+					<p>Material UI is a powerful tool for building modern React applications with a polished, consistent look and feel.</p>
+					<ul>
+						<li class="fragment fade-in">Comprehensive component library</li>
+						<li class="fragment fade-in">Easy theming and customization</li>
+						<li class="fragment fade-in">Excellent community and support</li>
+					</ul>
+				</section>
+			
+				<section>
+					<h3 class="fragment">Thank you for your attention!</h3>
+					<p>Any Questions?</p>
+					<p>Contact me <a href="mailto:olyaus0809@gmail.com" target="_blank">here</a></p>
+				</section>
 			</div>
 		</div>
 
@@ -26,13 +214,8 @@
 		<script src="plugin/markdown/markdown.js"></script>
 		<script src="plugin/highlight/highlight.js"></script>
 		<script>
-			// More info about initialization & config:
-			// - https://revealjs.com/initialization/
-			// - https://revealjs.com/config/
 			Reveal.initialize({
 				hash: true,
-
-				// Learn about plugins: https://revealjs.com/plugins/
 				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
 			});
 		</script>
